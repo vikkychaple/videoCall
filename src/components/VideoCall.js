@@ -202,7 +202,10 @@ const VideoCall = () => {
 
         return peer;
     };
-
+    const toggleVideo = () => {
+        stream.getVideoTracks()[0].enabled = !videoEnabled;
+        setVideoEnabled(!videoEnabled);
+    };
     const handleJoin = () => {
         if (userName.trim() !== "") setJoined(true);
     };
@@ -248,9 +251,12 @@ const VideoCall = () => {
                             <Button variant={muted ? "danger" : "primary"} className="me-2" onClick={() => setMuted(!muted)}>
                                 {muted ? "Unmute" : "Mute"}
                             </Button>
-                            <Button variant={videoEnabled ? "warning" : "success"} className="me-2" onClick={() => setVideoEnabled(!videoEnabled)}>
+                            {/* <Button variant={videoEnabled ? "warning" : "success"} className="me-2" onClick={() => setVideoEnabled(!videoEnabled)}>
                                 {videoEnabled ? "Turn Off Video" : "Turn On Video"}
-                            </Button>
+                            </Button> */}
+                            <Button variant={videoEnabled ? "warning" : "success"} className="me-2" onClick={toggleVideo}>
+                        {videoEnabled ? "Turn Off Video" : "Turn On Video"}
+                    </Button>
                             <Button variant="dark" onClick={() => window.location.reload()}>Leave Call</Button>
                         </Col>
                     </Row>
