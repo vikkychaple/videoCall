@@ -11,7 +11,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/room/:roomId" element={<VideoCall />} />
-                {/* Redirect unknown routes to Home */}
+               
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </Router>

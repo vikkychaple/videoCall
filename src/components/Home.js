@@ -6,10 +6,14 @@ import { v4 as uuidV4 } from "uuid";
 const Home = () => {
     const navigate = useNavigate();
 
+  
+
     const createRoom = () => {
-        const roomId = uuidV4(); // Generate a unique room ID
-        navigate(`/room/${roomId}`); // Redirect user to the room
+        const roomId = uuidV4(); 
+        navigate(`/room/${roomId}`); 
     };
+
+    
 
     return (
         <Container className="text-center mt-5">
@@ -18,6 +22,8 @@ const Home = () => {
             <Button variant="primary" onClick={createRoom}>
                 Start a New Call
             </Button>
+           
+
         </Container>
     );
 };
