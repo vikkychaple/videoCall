@@ -150,7 +150,7 @@ import { io } from "socket.io-client";
 import Peer from "simple-peer";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://backend-bdyk.onrender.com");
 
 const VideoCall = () => {
     const { roomId } = useParams();
